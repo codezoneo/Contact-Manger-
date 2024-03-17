@@ -10,4 +10,32 @@
   font-size: larger;
   color: black;
 }
+.formHeader{
+  margin-left: 12px;
+}
+.add-contact{
+  font-size: initial;
+  font-weight: 500;
+  font-family: fantasy;
+  margin-left: 12px;
+}
+.email{
+  font-size: x-small;
+}
+.contacts{
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid;
+  background: #FDEFF2;
+  margin-bottom: 2px;
+  margin-left: 12px;
+  margin-right: 5px;
 
+}
+.btn{
+  border-color: cadetblue;
+  color: #dd7973;
+  margin-top: 10px;
+  font-size: medium;
+  font-family: Arial;
+}
