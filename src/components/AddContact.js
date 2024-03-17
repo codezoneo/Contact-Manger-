@@ -1,33 +1,30 @@
 import React from "react";
 import { useState } from "react";
 
-export default function AddContact() {
-    const [contactData, setContactData] = useState({
-      name: "",
-      email: "",
-      Number: "",
-    });
+export default function AddContact({ contactAdd }) {
+  const [contactData, setContactData] = useState({
+    name: "",
+    email: "",
+    Number: "",
+  });
 
-    const handleChange = (e)=>{
-     if(e.target.name==="name"){
-        setContactData({...contactData, name:e.target.value})
-     }else{
-        setContactData({ ...contactData, email: e.target.value });
-     }
-     
+  const handleChange = (e) => {
+    if (e.target.name === "name") {
+      setContactData({ ...contactData, name: e.target.value });
+    } else {
+      setContactData({ ...contactData, email: e.target.value });
     }
+  };
 
-    const handleAdd = ()=>{
-        if (
-          contactData.name === "" ||
-          contactData.email === "" 
-        ) {
-          alert("please Enter the Details");
-          return;
-        } else {
-            console.log(contactData)
-        }
+  const handleAdd = () => {
+    if (contactData.name === "" || contactData.email === "") {
+      alert("please Enter the Details");
+      return;
+    } else {
+      contactAdd(contactData);
+      setContactData({name:"",email:""})
     }
+  };
 
   return (
     <>
@@ -54,10 +51,10 @@ export default function AddContact() {
             onChange={handleChange}
           />
           <br />
-          
-          
         </form>
-        <button className="btn" onClick={handleAdd}>Add Contact</button>
+        <button className="btn" onClick={handleAdd}>
+          Add Contact
+        </button>
       </div>
     </>
   );
